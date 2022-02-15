@@ -64,7 +64,7 @@ import static me.zeroeightsix.kami.DiscordPresence.setCustomIcons;
 )
 public class KamiMod {
 
-    public static final String MODNAME = "KAMI Blue";
+    public static final String MODNAME = "PLATEAU Client";
     public static final String MODID = "kamiblue";
     public static final String MODVER = "v1.1.3"; // this is changed to v1.1.2-commit for debugging during travis releases
     public static final String MODVERSMALL = "v1.1.3"; // shown to the user
@@ -77,16 +77,16 @@ public class KamiMod {
     private static final String UPDATE_JSON = "https://raw.githubusercontent.com/kami-blue/assets/assets/assets/updateChecker.json";
     public static final String DONATORS_JSON = "https://raw.githubusercontent.com/kami-blue/assets/assets/assets/donators.json";
     public static final String CAPES_JSON = "https://raw.githubusercontent.com/kami-blue/assets/assets/assets/capes.json";
-    public static final String GITHUB_LINK = "https://github.com/kami-blue/";
-    public static final String WEBSITE_LINK = "https://blue.bella.wtf";
+    public static final String GITHUB_LINK = "https://github.com/SWP360/plateau-client";
+    public static final String WEBSITE_LINK = "https://github.com/SWP360/plateau-client";
 
     public static final String KAMI_KANJI = "\u30ab\u30df\u30d6\u30eb";
     public static final char colour = '\u00A7';
     public static final char separator = '\u23d0';
 
-    private static final String KAMI_CONFIG_NAME_DEFAULT = "KAMIBlueConfig.json";
+    private static final String KAMI_CONFIG_NAME_DEFAULT = "PlateauConfig.json";
 
-    public static final Logger log = LogManager.getLogger("KAMI Blue");
+    public static final Logger log = LogManager.getLogger("Plateau Client");
 
     public static final EventBus EVENT_BUS = new EventManager();
     public static final ModuleManager MODULE_MANAGER = new ModuleManager();
@@ -114,7 +114,7 @@ public class KamiMod {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        updateCheck();
+        //updateCheck(); idk why kami blue is trying to download a ratted version
     }
 
     @Mod.EventHandler
@@ -161,7 +161,7 @@ public class KamiMod {
     }
 
     public static String getConfigName() {
-        Path config = Paths.get("KAMIBlueLastConfig.txt");
+        Path config = Paths.get("PlateauLastConfig.txt");
         String kamiConfigName = KAMI_CONFIG_NAME_DEFAULT;
         try (BufferedReader reader = Files.newBufferedReader(config)) {
             kamiConfigName = reader.readLine();
@@ -267,7 +267,7 @@ public class KamiMod {
 
     public void updateCheck() {
         try {
-            KamiMod.log.info("Attempting KAMI Blue update check...");
+            KamiMod.log.info("Attempting Plateau update check...");
 
             JsonParser parser = new JsonParser();
             String latestVersion = parser.parse(IOUtils.toString(new URL(UPDATE_JSON))).getAsJsonObject().getAsJsonObject("version").get(MCVER + "-latest").getAsString();
@@ -276,12 +276,12 @@ public class KamiMod {
             latest = latestVersion;
 
             if (!isLatest) {
-                KamiMod.log.warn("You are running an outdated version of KAMI Blue.\nCurrent: " + MODVERBROAD + "\nLatest: " + latestVersion);
+                KamiMod.log.warn("You are running an outdated version of Plateau.\nCurrent: " + MODVERBROAD + "\nLatest: " + latestVersion);
 
                 return;
             }
 
-            KamiMod.log.info("Your KAMI Blue (" + MODVERBROAD + ") is up-to-date with the latest stable release.");
+            KamiMod.log.info("Your Plateau (" + MODVERBROAD + ") is up-to-date with the latest stable release.");
         } catch (IOException e) {
             latest = null;
 
