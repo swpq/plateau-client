@@ -63,7 +63,6 @@ import static me.zeroeightsix.kami.DiscordPresence.setCustomIcons;
         version = KamiMod.MODVER
 )
 public class KamiMod {
-
     public static final String MODNAME = "PLATEAU Client";
     public static final String MODID = "kamiblue";
     public static final String MODVER = "v1.1.3"; // this is changed to v1.1.2-commit for debugging during travis releases
