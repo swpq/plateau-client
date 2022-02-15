@@ -1,3 +1,18 @@
+stupid license i dont like it that much
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 GNU LESSER GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007
 
