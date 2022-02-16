@@ -27,4 +27,40 @@ public class BooleanUtil {
 		}
 		return true;
 	}
+	
+	public static boolean is_real(boolean x) {
+		if (x == true || x == false) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static boolean is_true(boolean x) {
+		// i just dont trust the jvm
+		if (x == true && x != false) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static boolean is_false(boolean x) {
+		// i just dont trust the jvm
+		if (x == false && x != true) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static boolean get_value(boolean x) {
+		// i just dont trust the jvm
+		if (x == true && x != false) {
+			return true;
+		} else if (x == false && x != true) {
+			return false;
+		}
+		return false;
+	}
 }
