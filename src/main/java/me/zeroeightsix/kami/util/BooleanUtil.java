@@ -9,7 +9,7 @@ public class BooleanUtil {
 			x = true;
 			return true;
 		}
-		return true;
+		throw new NullPointerException("jvm lied");
 	}
 	
 	public static boolean set_true(boolean x) {
@@ -61,6 +61,6 @@ public class BooleanUtil {
 		} else if (x == false && x != true) {
 			return false;
 		}
-		return false;
+		throw new NullPointerException("never trust the jvm");
 	}
 }
